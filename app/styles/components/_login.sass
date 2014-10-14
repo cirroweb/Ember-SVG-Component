@@ -1,0 +1,51 @@
+.login-cover
+	position: fixed
+	top: 0
+	right: 0
+	bottom: 0
+	left: 0
+	z-index: $z-cover
+
+@keyframes push
+	0%
+		transform: scale(0.95)
+		opacity: 0
+	100%
+		transform: scale(1)
+		opacity: 1
+
+.login-container
+	position: fixed
+	top: 0
+	right: 0
+	bottom: 0
+	left: 0
+	display: table
+	table-layout: fixed
+	height: 100%
+	width: 500px
+	margin: 0 auto
+	z-index: $z-modal
+
+.login-wrap
+	display: table-cell
+	vertical-align: middle
+	position: relative
+	z-index: $z-modal
+	padding: $globalSpacing
+	animation: push 500ms
+	top: -100px
+	-webkit-font-smoothing: antialiased
+	h1
+		margin-bottom: $globalSpacing * 2
+	a
+		color: $gray
+		border: none
+		&:hover
+			color: $black
+	form
+		margin: 0
+	.other-actions
+		margin-top: $globalSpacing * 2
+		text-align: center
+

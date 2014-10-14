@@ -1,0 +1,101 @@
+.nav-blocker
+  position: fixed
+  top: 0 
+  left: 0
+  right: 0
+  background: white
+  height: 80px
+  z-index: $header - 10
+  box-shadow: 0 0 20px 20px white
+
+
+.main-nav
+  position: fixed
+  top: 20px
+  left: 20px
+  right: 20px
+  background: $black
+  padding: 30px
+  transition: 300ms ease-out
+  z-index: $header
+  .nav-wrap
+    position: fixed
+    right: 85px
+    text-align: right
+    top: 35px
+    h3
+      margin: 0
+      a
+        color: $gray
+        -webkit-font-smoothing: antialiased
+        border: none
+        text-align: right
+        &.active
+          color: $white
+        &:hover
+          color: $white
+
+  &.closed
+    a
+      display: none
+      &.active
+        top: 0
+        color: $white
+        display: block
+  &.open
+    top: 0
+    left: 0
+    right: 0
+    bottom: 0
+    h3
+      margin: 0 0 10px 0
+    #navicon-button .navicon:not(.steps) .navicon
+      &:before,
+      &:after
+        top: 0 !important
+    #navicon-button .navicon .navicon:after
+      transition: $transition-duration   
+    #navicon-button
+      .navicon
+        background: transparent
+        &:after
+          transform: rotate(45deg)
+          top: 0
+        &:before
+          transform: rotate(-45deg)
+          top: 0
+        &:hover
+          top: 0
+
+
+  #navicon-button
+    position: fixed
+    top: 28px
+    right: 20px
+    font-size: 30px
+    transition: $transition-duration
+    z-index: 6969
+    cursor: pointer
+    padding: 20px
+    user-select: none
+    .navicon:before, .navicon:after
+      transition: $transition-duration
+    .navicon
+      position: relative
+      width: 30px
+      height: 1px
+      background: white
+      transition: $transition-duration
+      &:after, &:before
+        display: block
+        content: ""
+        height: 1px
+        width: 30px
+        background: white
+        position: absolute
+        z-index: -1
+        transition: $transition-duration
+      &:after
+        top: -7px
+      &:before
+        top: 7px
