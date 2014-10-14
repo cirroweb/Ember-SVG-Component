@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>SvgComponent</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    {{BASE_TAG}}
+
+    <link rel="stylesheet" href="assets/vendor.css">
+    <link rel="stylesheet" href="assets/svg-component.css">
+  </head>
+  <body>
+    <script src="assets/vendor.js"></script>
+    <script src="assets/svg-component.js"></script>
+    <script>
+      window.SvgComponentENV = require('svg-component/config/environment')['default'];
+      window.EmberENV = window.SvgComponentENV.EmberENV;
+      window.SvgComponent = require('svg-component/app')['default'].create(SvgComponentENV.APP);
+    </script>
+  </body>
+</html>
